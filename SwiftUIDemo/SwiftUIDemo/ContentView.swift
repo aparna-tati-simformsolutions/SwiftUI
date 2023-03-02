@@ -13,7 +13,7 @@ struct ContentView: View {
             VStack {
                 NavigationLink(destination: SwiftUIText()) {
                     Text("Text")
-                        .frame(width: 100)
+                        .frame(width: 200)
                         .padding(10)
                         .foregroundColor(.white)
                         .background(LinearGradient(gradient: Gradient(colors: [Color.red, Color.blue]), startPoint: .trailing, endPoint: .leading))
@@ -22,7 +22,7 @@ struct ContentView: View {
                 }
                 NavigationLink(destination: SwiftUILabel()) {
                     Text("Label")
-                        .frame(width: 100)
+                        .frame(width: 200)
                         .padding(10)
                         .foregroundColor(.white)
                         .background(LinearGradient(gradient: Gradient(colors: [Color.red, Color.blue]), startPoint: .trailing, endPoint: .leading))
@@ -31,7 +31,16 @@ struct ContentView: View {
                 }
                 NavigationLink(destination: SwiftUITextField()) {
                     Text("TextField")
-                        .frame(width: 100)
+                        .frame(width: 200)
+                        .padding(10)
+                        .foregroundColor(.white)
+                        .background(LinearGradient(gradient: Gradient(colors: [Color.red, Color.blue]), startPoint: .trailing, endPoint: .leading))
+                        .cornerRadius(40)
+                        .font(.title3)
+                }
+                NavigationLink(destination: WelcomeView()) {
+                    Text("LoginDemo")
+                        .frame(width: 200)
                         .padding(10)
                         .foregroundColor(.white)
                         .background(LinearGradient(gradient: Gradient(colors: [Color.red, Color.blue]), startPoint: .trailing, endPoint: .leading))

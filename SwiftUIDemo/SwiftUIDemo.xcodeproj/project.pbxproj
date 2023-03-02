@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B95D929129B07119000CAF11 /* SwiftUITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95D929029B07119000CAF11 /* SwiftUITextField.swift */; };
+		B95D929429B0D008000CAF11 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95D929329B0D008000CAF11 /* WelcomeView.swift */; };
 		B9F8467729AF59CD00AF72F5 /* SwiftUIDemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F8467629AF59CD00AF72F5 /* SwiftUIDemoApp.swift */; };
 		B9F8467929AF59CD00AF72F5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F8467829AF59CD00AF72F5 /* ContentView.swift */; };
 		B9F8467B29AF59CD00AF72F5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B9F8467A29AF59CD00AF72F5 /* Assets.xcassets */; };
@@ -38,6 +39,7 @@
 
 /* Begin PBXFileReference section */
 		B95D929029B07119000CAF11 /* SwiftUITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUITextField.swift; sourceTree = "<group>"; };
+		B95D929329B0D008000CAF11 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		B9F8467329AF59CD00AF72F5 /* SwiftUIDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUIDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9F8467629AF59CD00AF72F5 /* SwiftUIDemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIDemoApp.swift; sourceTree = "<group>"; };
 		B9F8467829AF59CD00AF72F5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -77,6 +79,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B95D929229B0CFEE000CAF11 /* Demos */ = {
+			isa = PBXGroup;
+			children = (
+				B95D929329B0D008000CAF11 /* WelcomeView.swift */,
+			);
+			path = Demos;
+			sourceTree = "<group>";
+		};
 		B9F8466A29AF59CD00AF72F5 = {
 			isa = PBXGroup;
 			children = (
@@ -100,6 +110,7 @@
 		B9F8467529AF59CD00AF72F5 /* SwiftUIDemo */ = {
 			isa = PBXGroup;
 			children = (
+				B95D929229B0CFEE000CAF11 /* Demos */,
 				B9F846A029AF641E00AF72F5 /* Basic Components */,
 				B9F8467629AF59CD00AF72F5 /* SwiftUIDemoApp.swift */,
 				B9F8467829AF59CD00AF72F5 /* ContentView.swift */,
@@ -275,6 +286,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B9F846A629AF835D00AF72F5 /* SwiftUILabel.swift in Sources */,
+				B95D929429B0D008000CAF11 /* WelcomeView.swift in Sources */,
 				B9F8467929AF59CD00AF72F5 /* ContentView.swift in Sources */,
 				B95D929129B07119000CAF11 /* SwiftUITextField.swift in Sources */,
 				B9F846A429AF647A00AF72F5 /* SwiftUIText.swift in Sources */,
