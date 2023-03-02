@@ -9,13 +9,37 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        NavigationView {
+            VStack {
+                NavigationLink(destination: SwiftUIText()) {
+                    Text("Text")
+                        .frame(width: 100)
+                        .padding(10)
+                        .foregroundColor(.white)
+                        .background(LinearGradient(gradient: Gradient(colors: [Color.red, Color.blue]), startPoint: .trailing, endPoint: .leading))
+                        .cornerRadius(40)
+                        .font(.title3)
+                }
+                NavigationLink(destination: SwiftUILabel()) {
+                    Text("Label")
+                        .frame(width: 100)
+                        .padding(10)
+                        .foregroundColor(.white)
+                        .background(LinearGradient(gradient: Gradient(colors: [Color.red, Color.blue]), startPoint: .trailing, endPoint: .leading))
+                        .cornerRadius(40)
+                        .font(.title3)
+                }
+                NavigationLink(destination: SwiftUITextField()) {
+                    Text("TextField")
+                        .frame(width: 100)
+                        .padding(10)
+                        .foregroundColor(.white)
+                        .background(LinearGradient(gradient: Gradient(colors: [Color.red, Color.blue]), startPoint: .trailing, endPoint: .leading))
+                        .cornerRadius(40)
+                        .font(.title3)
+                }
+            }
         }
-        .padding()
     }
 }
 
