@@ -10,35 +10,44 @@ import SwiftUI
 struct WelcomeView: View {
     var body: some View {
         VStack {
-            ZStack {
+            ZStack(alignment: .bottom) {
                 Rectangle()
                     .fill(Color("navyBlue"))
-                    .frame(height: 400)
-                    .cornerRadius(radius: 90, corners: [.bottomLeft, .bottomRight])
+                    .cornerRadius(radius: 110, corners: [.bottomLeft, .bottomRight])
                     .ignoresSafeArea(.all)
                 Image("logo")
                     .resizable()
                     .clipShape(Circle())
                     .frame(width: 100, height: 100)
+                    .offset(y: 50)
             }
+            .frame(width: UIScreen.main.bounds.width + 5, height: UIScreen.main.bounds.height / 2 - 70)
             Spacer()
             Text("Leafboard")
                 .font(.system(size: 56, weight: .medium))
                 .bold()
-                .padding()
+                .padding(5)
             Text("A platform build for a new way of working")
                 .font(.subheadline)
             Spacer()
-            Button("Get Started for free") {
-                
+                .frame(height: UIScreen.main.bounds.height / 6)
+            Button {
+                print("Button Clicked")
+            } label: {
+                HStack {
+                    Text("Get Started For Free")
+                    Image(systemName: "arrow.right")
+                }
             }
             .padding(20)
             .frame(height: 50)
-            .background(.yellow)
+            .background(Color("lightGreen"))
             .foregroundColor(.black)
             .clipShape(Capsule())
             Spacer()
+                .frame(height: 40)
         }
+        .background(Color.white)
     }
 }
 
@@ -51,7 +60,7 @@ struct WelcomeView_Previews: PreviewProvider {
 struct CornerRadiusShape: Shape {
     var radius = CGFloat.infinity
     var corners = UIRectCorner.allCorners
-
+    
     func path(in rect: CGRect) -> Path {
         let path = UIBezierPath(roundedRect: rect, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
         return Path(path.cgPath)
@@ -61,7 +70,7 @@ struct CornerRadiusShape: Shape {
 struct CornerRadiusStyle: ViewModifier {
     var radius: CGFloat
     var corners: UIRectCorner
-
+    
     func body(content: Content) -> some View {
         content
             .clipShape(CornerRadiusShape(radius: radius, corners: corners))
