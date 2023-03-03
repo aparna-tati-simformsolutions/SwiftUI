@@ -8,12 +8,15 @@
 import SwiftUI
 
 struct WelcomeView: View {
+    
+    @State var goToLoginView = false
+    
     var body: some View {
         welcomeViewDesign
     }
 }
 
-struct WelcomeView_Previews: PreviewProvider {
+struct WelcomeView_PreviewsT: PreviewProvider {
     static var previews: some View {
         WelcomeView()
     }
@@ -45,7 +48,7 @@ extension WelcomeView {
     }
     
     private var titlesDesign: some View {
-        VStack {
+        Group {
             Spacer()
             Text("Leafboard")
                 .font(.system(size: 56, weight: .medium))
@@ -58,9 +61,9 @@ extension WelcomeView {
     }
     
     private var buttonDesign: some View {
-        VStack {
+        Group {
             Button {
-                print("Button Clicked")
+                self.goToLoginView = true
             } label: {
                 HStack {
                     Text("Get Started For Free")
