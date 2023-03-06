@@ -17,6 +17,7 @@ struct LoginView: View {
     @State private var email: String = ""
     @State private var password: String = ""
     @ObservedObject private var loginViewModel: LoginViewModel
+    @State var goToTabView: Bool = false
     
     init(viewModel: LoginViewModel = LoginViewModel()) {
         self.loginViewModel = viewModel
@@ -36,6 +37,9 @@ extension LoginView {
     private var loginView: some View {
         NavigationView {
             VStack {
+                NavigationLink(destination: LeafBoardTabView(), isActive: $goToTabView) {
+                    EmptyView()
+                }
                 Spacer()
                     .frame(height: UIScreen.main.bounds.height * 0.05)
                 headings
@@ -103,7 +107,7 @@ extension LoginView {
     private var loginButton: some View {
         Button {
             if loginViewModel.isLoginValid {
-                print("Logged in sucessfully")
+                self.goToTabView = true
             } else {
                 print("Enter proper email and password")
             }
