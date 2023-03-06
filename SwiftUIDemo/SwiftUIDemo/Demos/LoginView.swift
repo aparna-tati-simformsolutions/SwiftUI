@@ -7,10 +7,20 @@
 
 import SwiftUI
 
+enum FocusedField {
+    case email, password
+}
+
 struct LoginView: View {
     
-    @State var email: String = ""
-    @State var password: String = ""
+    @FocusState private var focusedField: FocusedField?
+    @State private var email: String = ""
+    @State private var password: String = ""
+    @ObservedObject private var loginViewModel: LoginViewModel
+    
+    init(viewModel: LoginViewModel = LoginViewModel()) {
+        self.loginViewModel = viewModel
+    }
     
     var body: some View {
         loginView
@@ -18,19 +28,33 @@ struct LoginView: View {
 }
 
 extension LoginView {
+    
+    var buttonOpacity: Double {
+       return loginViewModel.isLoginValid ? 1 : 0.5
+     }
 
     private var loginView: some View {
-        VStack {
-            Spacer()
-                .frame(height: UIScreen.main.bounds.height * 0.05)
-            headings
-            Spacer()
-                .frame(height: UIScreen.main.bounds.height * 0.05)
-            textFields
-            loginButton
-            divider
-            socialLoginButtons
-            Spacer()
+        NavigationView {
+            VStack {
+                Spacer()
+                    .frame(height: UIScreen.main.bounds.height * 0.05)
+                headings
+                Spacer()
+                    .frame(height: UIScreen.main.bounds.height * 0.05)
+                textFields
+                loginButton
+                divider
+                socialLoginButtons
+                Spacer()
+            }
+        }
+        .navigationBarHidden(true)
+        .onSubmit {
+            if focusedField == .email {
+                focusedField = .password
+            } else {
+                focusedField = nil
+            }
         }
     }
 
@@ -53,16 +77,21 @@ extension LoginView {
         Group {
             VStack(alignment: .leading) {
                 Text("Your email address")
-                TextField("Username", text: $email)
+                TextField("Username", text: $loginViewModel.email)
                     .roundedTextField()
                     .keyboardType(.emailAddress)
+                    .autocapitalization(.none)
+                    .focused($focusedField, equals: .email)
+                    .submitLabel(.next)
             }
             .padding(15)
             VStack(alignment: .leading) {
                 Text("Choose a password")
-                SecureTextField(text: $password)
+                SecureTextField(text: $loginViewModel.password)
                     .roundedTextField()
                     .keyboardType(.asciiCapable)
+                    .focused($focusedField, equals: .password)
+                    .submitLabel(.done)
             }
             .padding(.horizontal, 15)
             .padding(.bottom, 20)
@@ -71,7 +100,11 @@ extension LoginView {
 
     private var loginButton: some View {
         Button {
-            print("Button Clicked")
+            if loginViewModel.isLoginValid {
+                print("Logged in sucessfully")
+            } else {
+                print("Enter proper email and password")
+            }
         } label: {
             HStack {
                 Spacer()
@@ -82,10 +115,12 @@ extension LoginView {
         }
         .padding(.horizontal, 15)
         .frame(width: UIScreen.main.bounds.width - 30, height: 50)
-        .background(Color("lightGray"))
-        .foregroundColor(.gray)
+        .background(Color("lightGreen"))
+        .foregroundColor(.black)
         .clipShape(Capsule())
+        .opacity(buttonOpacity)
         .padding(.bottom, 20)
+        .disabled(!loginViewModel.isLoginValid)
     }
     
     private var divider: some View {
@@ -143,6 +178,5 @@ extension View {
             .overlay(RoundedRectangle(cornerRadius: 40)
                 .stroke(Color.gray, lineWidth: 1)
             )
-            
     }
 }

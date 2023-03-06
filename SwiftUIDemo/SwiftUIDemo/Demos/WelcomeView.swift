@@ -9,7 +9,7 @@ import SwiftUI
 
 struct WelcomeView: View {
     
-    @State var goToLoginView = false
+    @State var goToLoginView: Bool = false
     
     var body: some View {
         welcomeViewDesign
@@ -24,12 +24,17 @@ struct WelcomeView_PreviewsT: PreviewProvider {
 
 extension WelcomeView {
     private var welcomeViewDesign: some View {
-        VStack {
-            headerDesign
-            titlesDesign
-            buttonDesign
+        NavigationView {
+            VStack {
+                NavigationLink(destination: LoginView(), isActive: $goToLoginView) {
+                    EmptyView()
+                }
+                headerDesign
+                titlesDesign
+                buttonDesign
+            }
+            .background(Color.white)
         }
-        .background(Color.white)
     }
     
     private var headerDesign: some View {
