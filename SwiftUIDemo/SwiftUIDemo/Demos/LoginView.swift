@@ -21,19 +21,30 @@ extension LoginView {
 
     private var loginView: some View {
         VStack {
+            Spacer()
+                .frame(height: UIScreen.main.bounds.height * 0.05)
             headings
+            Spacer()
+                .frame(height: UIScreen.main.bounds.height * 0.05)
             textFields
             loginButton
             divider
             socialLoginButtons
+            Spacer()
         }
     }
 
     private var headings: some View {
         Group {
-            Label("Leafboard", systemImage: "bolt.fill")
-                .font(.system(.title))
-                .padding(7)
+            Label {
+                Text("Leafboard")
+                    .font(.system(.title))
+            } icon: {
+                Image("logo1")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 40, height: 40)
+            }
             Text("Work without limits")
         }
     }
@@ -89,7 +100,7 @@ extension LoginView {
     private var socialLoginButtons: some View {
         Group {
             Button {
-                
+                print("Sign up with Google")
             } label: {
                 HStack {
                     Image("google").resizable().frame(width: 25, height: 25)
@@ -98,7 +109,7 @@ extension LoginView {
             }
             .padding()
             Button {
-            
+                print("Sign up with Apple")
             } label: {
                 HStack {
                     Image("apple").resizable().frame(width: 25, height: 25)
