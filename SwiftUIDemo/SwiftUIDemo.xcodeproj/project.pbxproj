@@ -88,20 +88,28 @@
 		B95D929229B0CFEE000CAF11 /* Demos */ = {
 			isa = PBXGroup;
 			children = (
-				B9D593F829B5E2D800DAB062 /* ViewModels */,
-				B95D929329B0D008000CAF11 /* WelcomeView.swift */,
-				B9FC799F29B1C15C005E2E79 /* SplashView.swift */,
-				B9FC79A129B1F7C5005E2E79 /* LoginView.swift */,
+				B9D593FB29B5F80500DAB062 /* View */,
+				B9D593F829B5E2D800DAB062 /* ViewModel */,
 			);
 			path = Demos;
 			sourceTree = "<group>";
 		};
-		B9D593F829B5E2D800DAB062 /* ViewModels */ = {
+		B9D593F829B5E2D800DAB062 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
 				B9D593F929B5E2E800DAB062 /* LoginViewModel.swift */,
 			);
-			path = ViewModels;
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		B9D593FB29B5F80500DAB062 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B95D929329B0D008000CAF11 /* WelcomeView.swift */,
+				B9FC79A129B1F7C5005E2E79 /* LoginView.swift */,
+				B9FC799F29B1C15C005E2E79 /* SplashView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		B9F8466A29AF59CD00AF72F5 = {

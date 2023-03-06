@@ -78,6 +78,8 @@ extension LoginView {
             VStack(alignment: .leading) {
                 Text("Your email address")
                 TextField("Username", text: $loginViewModel.email)
+                    .modifier(TextFieldClearButton(text: $loginViewModel.email))
+                    .multilineTextAlignment(.leading)
                     .roundedTextField()
                     .keyboardType(.emailAddress)
                     .autocapitalization(.none)
@@ -158,6 +160,25 @@ extension LoginView {
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
         LoginView()
+    }
+}
+
+struct TextFieldClearButton: ViewModifier {
+     
+    @Binding var text: String
+    
+    func body(content: Content) -> some View {
+        HStack {
+            content
+            if !text.isEmpty {
+                Button {
+                    self.text = ""
+                } label: {
+                    Image(systemName: "delete.left")
+                        .foregroundColor(Color(UIColor.opaqueSeparator))
+                }
+            }
+        }
     }
 }
 
