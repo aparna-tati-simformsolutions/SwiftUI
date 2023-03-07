@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ProductModel: Codable {
+struct ProductModel: Codable, Equatable, Hashable {
     var id: Double
     var title: String
     var price: Double
@@ -17,7 +17,7 @@ struct ProductModel: Codable {
     var rating: Rating
 }
 
-struct Rating: Codable {
+struct Rating: Codable, Equatable, Hashable  {
     var rate: Double
     var count: Double
 }
