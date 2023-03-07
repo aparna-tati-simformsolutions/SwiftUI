@@ -6,10 +6,25 @@
 //
 
 import SwiftUI
+import Alamofire
 
 struct ProductsView: View {
+    
+    @StateObject var productViewModel = ProductViewModel()
+    
     var body: some View {
         Text("Hello, Products!")
+        .onAppear {
+            getAll()
+        }
+    }
+}
+
+extension ProductsView {
+
+    func getAll() {
+        print(productViewModel.productData)
+        productViewModel.getAllProducts()
     }
 }
 

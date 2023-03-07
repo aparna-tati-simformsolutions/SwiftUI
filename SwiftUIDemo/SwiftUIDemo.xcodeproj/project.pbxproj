@@ -17,6 +17,7 @@
 		B9D6BA2E29B71A4100EE23F0 /* CartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D6BA2D29B71A4100EE23F0 /* CartView.swift */; };
 		B9D6BA3029B71A4C00EE23F0 /* UsersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D6BA2F29B71A4C00EE23F0 /* UsersView.swift */; };
 		B9D6BA3329B72CD800EE23F0 /* ProductModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D6BA3229B72CD800EE23F0 /* ProductModel.swift */; };
+		B9D6BA3529B7354E00EE23F0 /* ProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D6BA3429B7354E00EE23F0 /* ProductViewModel.swift */; };
 		B9F8467729AF59CD00AF72F5 /* SwiftUIDemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F8467629AF59CD00AF72F5 /* SwiftUIDemoApp.swift */; };
 		B9F8467929AF59CD00AF72F5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F8467829AF59CD00AF72F5 /* ContentView.swift */; };
 		B9F8467B29AF59CD00AF72F5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B9F8467A29AF59CD00AF72F5 /* Assets.xcassets */; };
@@ -66,6 +67,7 @@
 		B9D6BA2D29B71A4100EE23F0 /* CartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartView.swift; sourceTree = "<group>"; };
 		B9D6BA2F29B71A4C00EE23F0 /* UsersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersView.swift; sourceTree = "<group>"; };
 		B9D6BA3229B72CD800EE23F0 /* ProductModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductModel.swift; sourceTree = "<group>"; };
+		B9D6BA3429B7354E00EE23F0 /* ProductViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewModel.swift; sourceTree = "<group>"; };
 		B9F8467329AF59CD00AF72F5 /* SwiftUIDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUIDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9F8467629AF59CD00AF72F5 /* SwiftUIDemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIDemoApp.swift; sourceTree = "<group>"; };
 		B9F8467829AF59CD00AF72F5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -134,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				B9D593F929B5E2E800DAB062 /* LoginViewModel.swift */,
+				B9D6BA3429B7354E00EE23F0 /* ProductViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -240,7 +243,6 @@
 				23E42B05A67CF2DAE9FB4E4F /* Pods-SwiftUIDemoTests.debug.xcconfig */,
 				9C0D38C28E04198EDF80DC07 /* Pods-SwiftUIDemoTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -496,6 +498,7 @@
 				B9FC79A229B1F7C5005E2E79 /* LoginView.swift in Sources */,
 				B9FC79A029B1C15C005E2E79 /* SplashView.swift in Sources */,
 				B9D593FA29B5E2E800DAB062 /* LoginViewModel.swift in Sources */,
+				B9D6BA3529B7354E00EE23F0 /* ProductViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
