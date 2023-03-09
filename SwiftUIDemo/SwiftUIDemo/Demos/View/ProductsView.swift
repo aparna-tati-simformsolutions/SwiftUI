@@ -12,32 +12,22 @@ import Kingfisher
 struct ProductsView: View {
     
     @StateObject var productViewModel = ProductViewModel()
+    @State private var selectedProductTitle: Double = 0
+    @State private var showModal: Bool = false
     
     var body: some View {
         NavigationView {
-            List(productViewModel.productData, id: \.self) { item in
-                HStack {
-                    KFImage(URL(string: item.image))
-                        .resizable()
-                        .frame(width: 100, height: 70)
-                        .cornerRadius(10)
-                    VStack(alignment: .leading, spacing: 5) {
-                        Text(item.title)
-                            .fontWeight(.semibold)
-                            .frame(alignment: .center)
-                            .minimumScaleFactor(0.5)
-                        
-                        Text(String(item.price))
-                            .font(.subheadline)
-                            .foregroundColor(.secondary)
-                    }
+            List(productViewModel.productData, id: \.self) {
+                product in
+                NavigationLink(destination: ProductsDetailView(productId:product.id)) {
+                    ProductRow(product: product)
                 }
             }
-            .onAppear {
-                productViewModel.getAllProducts()
-            }
-            .navigationTitle("Products")
         }
+        .onAppear {
+            productViewModel.getAllProducts()
+        }
+        .navigationTitle("Products")
     }
 }
 
