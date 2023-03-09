@@ -16,18 +16,21 @@ struct ProductsView: View {
     @State private var showModal: Bool = false
     
     var body: some View {
-        NavigationView {
-            List(productViewModel.productData, id: \.self) {
-                product in
-                NavigationLink(destination: ProductsDetailView(productId:product.id)) {
-                    ProductRow(product: product)
+        VStack {
+            NavigationView {
+                List(productViewModel.productData, id: \.self) {
+                    product in
+                    NavigationLink(destination: ProductsDetailView(productId:product.id)) {
+                        ProductRow(product: product)
+                    }
                 }
+                .listStyle(.plain)
             }
+            .onAppear {
+                productViewModel.getAllProducts()
+            }
+            .navigationTitle("Products")
         }
-        .onAppear {
-            productViewModel.getAllProducts()
-        }
-        .navigationTitle("Products")
     }
 }
 

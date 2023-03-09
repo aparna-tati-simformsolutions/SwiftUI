@@ -15,24 +15,40 @@ struct ProductsDetailView: View {
     
     var body: some View {
         VStack {
-            KFImage(URL(string: productViewModel.productDetails.image))
-                .resizable()
-                .frame(width: 200, height: 120)
-                .cornerRadius(20)
-            VStack(spacing: 5) {
+            ScrollView {
+                KFImage(URL(string: productViewModel.productDetails.image))
+                    .resizable()
+                    .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height / 2.0)
+                    .cornerRadius(20)
                 Text(productViewModel.productDetails.title)
-                    .fontWeight(.semibold)
-                    .frame(alignment: .center)
+                    .fontWeight(.bold)
                     .minimumScaleFactor(0.5)
-                Text(productViewModel.productDetails.description)
-                    .font(.subheadline)
-                    .frame(alignment: .center)
-                Text(productViewModel.productDetails.category)
-                    .font(.subheadline)
-                    .frame(alignment: .center)
-                Text(String(productViewModel.productDetails.price))
-                    .font(.subheadline)
-                    .foregroundColor(.secondary)
+                    .padding(10)
+                VStack(alignment: .leading) {
+                    Text("Description")
+                        .fontWeight(.bold)
+                        .padding(.leading, 10)
+                    Text(productViewModel.productDetails.description)
+                        .font(.subheadline)
+                        .frame(alignment: .center)
+                        .padding(.all, 10)
+                    HStack {
+                        Text("Category:")
+                            .fontWeight(.bold)
+                        Text(productViewModel.productDetails.category)
+                            .font(.subheadline)
+                            .frame(alignment: .center)
+                    }.padding(10)
+                }
+                HStack {
+                    Text("M.R.P.:")
+                        .fontWeight(.bold)
+                        .padding(.leading, 10)
+                    Text(String(Int(productViewModel.productDetails.price)))
+                        .font(.subheadline)
+                        .foregroundColor(.secondary)
+                }
+                
             }
         }
         .onAppear {

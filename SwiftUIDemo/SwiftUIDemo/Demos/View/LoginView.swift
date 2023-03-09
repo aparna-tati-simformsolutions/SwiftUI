@@ -37,7 +37,7 @@ extension LoginView {
     private var loginView: some View {
         NavigationView {
             VStack {
-                NavigationLink(destination: LeafBoardTabView(), isActive: $goToTabView) {
+                NavigationLink(destination: LeafBoardTabView().navigationBarBackButtonHidden(true), isActive: $goToTabView) {
                     EmptyView()
                 }
                 Spacer()

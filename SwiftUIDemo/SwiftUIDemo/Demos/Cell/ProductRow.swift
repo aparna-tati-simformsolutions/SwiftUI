@@ -17,7 +17,6 @@ struct ProductRow: View {
             KFImage(URL(string: product.image))
                 .resizable()
                 .frame(width: 100, height: 70)
-                .cornerRadius(10)
             VStack(alignment: .leading) {
                 Text(product.title)
                     .fontWeight(.semibold)
