@@ -65,7 +65,7 @@ struct StarsView: View {
             ForEach(0..<maxRating, id: \.self) { _ in
                 Image(systemName: "star.fill")
                     .resizable()
-                    .frame(width: 30, height: 15)
+                    .frame(width: 25, height: 15)
             }
         }
 

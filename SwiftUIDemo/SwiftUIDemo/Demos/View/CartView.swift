@@ -7,9 +7,44 @@
 
 import SwiftUI
 
+enum Segments: String, CaseIterable {
+    case lazyVGrid = "LazyVGrid"
+    case lazyHGrid = "LazyHGrid"
+}
+
 struct CartView: View {
+ 
+    @State var segmentSelection: Segments = .lazyVGrid
+    
     var body: some View {
-        Text("Hello, Cart!")
+        VStack {
+            Picker("", selection: $segmentSelection) {
+                ForEach(Segments.allCases, id: \.self) { option in
+                    Text(option.rawValue)
+                }
+            }.pickerStyle(.segmented)
+                .padding()
+                .onChange(of: segmentSelection) { newValue in
+                    segmentSelection = newValue
+                }
+            Spacer()
+            SegmentedView(selectedSegment: $segmentSelection)
+            Spacer()
+        }
+    }
+}
+
+struct SegmentedView: View {
+    
+    @Binding var selectedSegment: Segments
+    
+    var body: some View {
+        switch selectedSegment {
+        case .lazyVGrid:
+            LazyVGridView()
+        case .lazyHGrid:
+            LazyHGridView()
+        }
     }
 }
 

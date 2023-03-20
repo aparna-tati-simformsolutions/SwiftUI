@@ -10,8 +10,8 @@ import Combine
 
 final class LoginViewModel: ObservableObject {
     
-    @Published var email = ""
-    @Published var password = ""
+    @Published var email = "apar3874@gmail.com"
+    @Published var password = "7467346234"
     @Published var isLoginValid = false
     
     private var publishers = Set<AnyCancellable>()
