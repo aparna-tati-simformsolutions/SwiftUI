@@ -37,16 +37,15 @@ struct ProductsDetailView: View {
                             .fontWeight(.bold)
                         Text(productViewModel.productDetails.category)
                             .font(.subheadline)
-                            .frame(alignment: .center)
                     }.padding(10)
-                }
-                HStack {
-                    Text("M.R.P.:")
-                        .fontWeight(.bold)
-                        .padding(.leading, 10)
-                    Text(String(Int(productViewModel.productDetails.price)))
-                        .font(.subheadline)
-                        .foregroundColor(.secondary)
+                    HStack {
+                        Text("M.R.P:")
+                            .fontWeight(.bold)
+                        Text(String(Int(productViewModel.productDetails.price)))
+                            .font(.subheadline)
+                    }.padding(10)
+                    StarsView(rating: productViewModel.productDetails.rating.rate, maxRating: 5)
+                        .padding(10)
                 }
                 
             }
@@ -57,3 +56,30 @@ struct ProductsDetailView: View {
     }
 }
 
+struct StarsView: View {
+    var rating: CGFloat
+    var maxRating: Int
+
+    var body: some View {
+        let stars = HStack(spacing: 5) {
+            ForEach(0..<maxRating, id: \.self) { _ in
+                Image(systemName: "star.fill")
+                    .resizable()
+                    .frame(width: 30, height: 15)
+            }
+        }
+
+        stars.overlay(
+            GeometryReader { g in
+                let width = rating / CGFloat(maxRating) * g.size.width
+                ZStack(alignment: .leading) {
+                    Rectangle()
+                        .frame(width: width, height: 20)
+                        .foregroundColor(.yellow)
+                }
+            }
+            .mask(stars)
+        )
+        .foregroundColor(.gray)
+    }
+}
