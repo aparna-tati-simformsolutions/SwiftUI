@@ -7,9 +7,29 @@
 
 import SwiftUI
 
-struct UsersView: View {
+struct TaskRow: View {
+    var city: String
+    
     var body: some View {
-        Text("Hello, Users!")
+        Text(city)
+    }
+}
+
+struct UsersView: View {
+    
+    @StateObject var countryViewModel = CountryViewModel()
+
+    var body: some View {
+        VStack {
+            List(countryViewModel.countryStates.data) { item in
+//                Section(header: "\(item.country)") {
+//                    
+//                }
+            }
+        }
+        .onAppear {
+            countryViewModel.getCountriesAndStates()
+        }
     }
 }
 
