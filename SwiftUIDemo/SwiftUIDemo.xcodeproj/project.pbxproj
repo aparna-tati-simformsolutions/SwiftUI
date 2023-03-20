@@ -15,6 +15,7 @@
 		B95D929429B0D008000CAF11 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95D929329B0D008000CAF11 /* WelcomeView.swift */; };
 		B9608AAC29C851E300A88D56 /* LazyHGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9608AAB29C851E300A88D56 /* LazyHGridView.swift */; };
 		B9608AAE29C8527000A88D56 /* LazyVGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9608AAD29C8527000A88D56 /* LazyVGridView.swift */; };
+		B9608AB029C86E9900A88D56 /* FirstNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9608AAF29C86E9900A88D56 /* FirstNavigationView.swift */; };
 		B9D593FA29B5E2E800DAB062 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D593F929B5E2E800DAB062 /* LoginViewModel.swift */; };
 		B9D593FF29B602ED00DAB062 /* LeafBoardTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D593FE29B602ED00DAB062 /* LeafBoardTabView.swift */; };
 		B9D6BA2C29B71A3700EE23F0 /* ProductsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D6BA2B29B71A3700EE23F0 /* ProductsView.swift */; };
@@ -69,6 +70,7 @@
 		B95D929329B0D008000CAF11 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		B9608AAB29C851E300A88D56 /* LazyHGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LazyHGridView.swift; sourceTree = "<group>"; };
 		B9608AAD29C8527000A88D56 /* LazyVGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LazyVGridView.swift; sourceTree = "<group>"; };
+		B9608AAF29C86E9900A88D56 /* FirstNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstNavigationView.swift; sourceTree = "<group>"; };
 		B9D593F929B5E2E800DAB062 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		B9D593FE29B602ED00DAB062 /* LeafBoardTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeafBoardTabView.swift; sourceTree = "<group>"; };
 		B9D6BA2B29B71A3700EE23F0 /* ProductsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsView.swift; sourceTree = "<group>"; };
@@ -249,6 +251,7 @@
 				B95D929029B07119000CAF11 /* SwiftUITextField.swift */,
 				B9608AAB29C851E300A88D56 /* LazyHGridView.swift */,
 				B9608AAD29C8527000A88D56 /* LazyVGridView.swift */,
+				B9608AAF29C86E9900A88D56 /* FirstNavigationView.swift */,
 			);
 			path = "Basic Components";
 			sourceTree = "<group>";
@@ -519,6 +522,7 @@
 				B9D6BA3029B71A4C00EE23F0 /* UsersView.swift in Sources */,
 				B9FC79A229B1F7C5005E2E79 /* LoginView.swift in Sources */,
 				B9FC79A029B1C15C005E2E79 /* SplashView.swift in Sources */,
+				B9608AB029C86E9900A88D56 /* FirstNavigationView.swift in Sources */,
 				B90422EA29B9B2FC00DB9AD5 /* ProductRow.swift in Sources */,
 				B9D593FA29B5E2E800DAB062 /* LoginViewModel.swift in Sources */,
 				B9D6BA3529B7354E00EE23F0 /* ProductViewModel.swift in Sources */,

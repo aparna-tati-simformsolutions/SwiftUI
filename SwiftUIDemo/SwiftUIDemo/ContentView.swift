@@ -12,40 +12,19 @@ struct ContentView: View {
         NavigationView {
             VStack {
                 NavigationLink(destination: SwiftUIText()) {
-                    Text("Text")
-                        .frame(width: 200)
-                        .padding(10)
-                        .foregroundColor(.white)
-                        .background(LinearGradient(gradient: Gradient(colors: [Color.red, Color.blue]), startPoint: .trailing, endPoint: .leading))
-                        .cornerRadius(40)
-                        .font(.title3)
+                   TextStyle(text: "Text")
                 }
                 NavigationLink(destination: SwiftUILabel()) {
-                    Text("Label")
-                        .frame(width: 200)
-                        .padding(10)
-                        .foregroundColor(.white)
-                        .background(LinearGradient(gradient: Gradient(colors: [Color.red, Color.blue]), startPoint: .trailing, endPoint: .leading))
-                        .cornerRadius(40)
-                        .font(.title3)
+                    TextStyle(text: "Label")
                 }
                 NavigationLink(destination: SwiftUITextField()) {
-                    Text("TextField")
-                        .frame(width: 200)
-                        .padding(10)
-                        .foregroundColor(.white)
-                        .background(LinearGradient(gradient: Gradient(colors: [Color.red, Color.blue]), startPoint: .trailing, endPoint: .leading))
-                        .cornerRadius(40)
-                        .font(.title3)
+                    TextStyle(text: "TextField")
                 }
                 NavigationLink(destination: WelcomeView()) {
-                    Text("LoginDemo")
-                        .frame(width: 200)
-                        .padding(10)
-                        .foregroundColor(.white)
-                        .background(LinearGradient(gradient: Gradient(colors: [Color.red, Color.blue]), startPoint: .trailing, endPoint: .leading))
-                        .cornerRadius(40)
-                        .font(.title3)
+                    TextStyle(text: "LoginDemo")
+                }
+                NavigationLink(destination: FirstNavigationView()) {
+                    TextStyle(text: "Navigation")
                 }
             }
         }
@@ -55,5 +34,19 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+    }
+}
+
+struct TextStyle: View {
+    var text: String
+
+    var body: some View {
+        Text(text)
+            .frame(width: 200)
+            .padding(10)
+            .foregroundColor(.white)
+            .background(LinearGradient(gradient: Gradient(colors: [Color.red, Color.blue]), startPoint: .trailing, endPoint: .leading))
+            .cornerRadius(40)
+            .font(.title3)
     }
 }
