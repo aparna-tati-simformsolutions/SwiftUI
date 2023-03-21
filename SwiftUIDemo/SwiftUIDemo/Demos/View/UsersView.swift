@@ -7,25 +7,20 @@
 
 import SwiftUI
 
-struct TaskRow: View {
-    var city: String
-    
-    var body: some View {
-        Text(city)
-    }
-}
-
 struct UsersView: View {
     
     @StateObject var countryViewModel = CountryViewModel()
-
+    
     var body: some View {
         VStack {
             List(countryViewModel.countryStates.data) { item in
-//                Section(header: "\(item.country)") {
-//                    
-//                }
+                Section(header: Text(item.country)) {
+                    ForEach(item.cities.indices, id: \.self) { city in
+                        CountryRow(city: item.cities[city])
+                    }
+                }
             }
+            .id(UUID())
         }
         .onAppear {
             countryViewModel.getCountriesAndStates()

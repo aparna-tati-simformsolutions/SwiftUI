@@ -13,7 +13,7 @@ struct Country: Codable {
     let data: [CountryCities]
 }
 
-struct CountryCities: Codable,Identifiable {
+struct CountryCities: Codable, Identifiable {
     let id = UUID()
     let iso2, iso3, country: String
     let cities: [String]
