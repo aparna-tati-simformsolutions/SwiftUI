@@ -17,14 +17,25 @@ struct ProductsView: View {
     
     var body: some View {
         VStack {
-            NavigationView {
-                List(productViewModel.productData, id: \.self) {
-                    product in
-                    NavigationLink(destination: ProductsDetailView(productId:product.id)) {
-                        ProductRow(product: product)
+            ZStack {
+                NavigationView {
+                    List(productViewModel.productData, id: \.self) {
+                        product in
+                        NavigationLink(destination: ProductsDetailView(productId:product.id)) {
+                            ProductRow(product: product)
+                        }
                     }
+                    .listStyle(.plain)
                 }
-                .listStyle(.plain)
+                if !productViewModel.isDataFetch {
+                    ProgressView {
+                        Text("Loading")
+                            .bold()
+                            .font(.subheadline)
+                            .foregroundColor(.red)
+                    }
+                    .tint(.red)
+                }
             }
             .onAppear {
                 productViewModel.getAllProducts()

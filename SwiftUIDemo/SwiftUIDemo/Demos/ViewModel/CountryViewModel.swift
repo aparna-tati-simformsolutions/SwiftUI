@@ -6,10 +6,12 @@
 //
 
 import Alamofire
+import SwiftUI
 
 class CountryViewModel: ObservableObject {
     
     @Published var countryStates = Country(error: false, msg: "", data: [])
+    @Published var isDataFetch = false
     
     func getCountriesAndStates() {
         AF.request("https://countriesnow.space/api/v0.1/countries/", method: .get).response { (response) in
@@ -18,6 +20,7 @@ class CountryViewModel: ObservableObject {
                 do {
                     guard let data = data else { return }
                     self.countryStates = try JSONDecoder().decode(Country.self, from: data)
+                    self.isDataFetch = true
                 } catch let error {
                     print(error)
                 }

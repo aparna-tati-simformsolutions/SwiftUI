@@ -12,7 +12,7 @@ struct UsersView: View {
     @StateObject var countryViewModel = CountryViewModel()
     
     var body: some View {
-        VStack {
+        ZStack {
             List(countryViewModel.countryStates.data) { item in
                 Section(header: Text(item.country)) {
                     ForEach(item.cities.indices, id: \.self) { city in
@@ -21,6 +21,15 @@ struct UsersView: View {
                 }
             }
             .id(UUID())
+            if !countryViewModel.isDataFetch {
+                ProgressView {
+                    Text("Loading")
+                        .bold()
+                        .font(.subheadline)
+                        .foregroundColor(.red)
+                }
+                .tint(.red)
+            }
         }
         .onAppear {
             countryViewModel.getCountriesAndStates()

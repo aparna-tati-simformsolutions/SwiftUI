@@ -11,7 +11,8 @@ class ProductViewModel: ObservableObject {
     
     @Published var productData = [ProductModel]()
     @Published var productDetails = ProductModel(id: 0, title: "", price: 0, description: "", category: "", image: "", rating: Rating(rate: 0, count: 0))
-    
+    @Published var isDataFetch = false
+
     func getAllProducts() {
         AF.request("https://fakestoreapi.com/products", method: .get).response { (response) in
             switch response.result {
@@ -19,6 +20,7 @@ class ProductViewModel: ObservableObject {
                 do {
                     guard let data = data else { return }
                     self.productData = try JSONDecoder().decode([ProductModel].self, from: data)
+                    self.isDataFetch = true
                 } catch let error {
                     print(error)
                 }
