@@ -37,7 +37,7 @@ extension LoginView {
     private var loginView: some View {
         NavigationView {
             VStack {
-                NavigationLink(destination: LeafBoardTabView().navigationBarBackButtonHidden(true), isActive: $goToTabView) {
+                NavigationLink(destination: LeafBoardTabView(), isActive: $goToTabView) {
                     EmptyView()
                 }
                 Spacer()
@@ -52,7 +52,6 @@ extension LoginView {
                 Spacer()
             }
         }
-        .navigationBarHidden(true)
         .onSubmit {
             if focusedField == .email {
                 focusedField = .password

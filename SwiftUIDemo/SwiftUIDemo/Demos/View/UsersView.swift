@@ -14,7 +14,7 @@ struct UsersView: View {
     var body: some View {
         ZStack {
             List(countryViewModel.countryStates.data) { item in
-                Section(header: Text(item.country)) {
+                Section(header: Text(item.country).foregroundColor(.black).font(.headline).bold()) {
                     ForEach(item.cities.indices, id: \.self) { city in
                         CountryRow(city: item.cities[city])
                     }

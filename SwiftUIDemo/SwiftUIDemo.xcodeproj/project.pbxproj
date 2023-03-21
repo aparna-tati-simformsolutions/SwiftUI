@@ -19,6 +19,9 @@
 		B9608AB429C88DF200A88D56 /* CountryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9608AB329C88DF200A88D56 /* CountryViewModel.swift */; };
 		B9608AB629C88E5700A88D56 /* CountryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9608AB529C88E5700A88D56 /* CountryModel.swift */; };
 		B97DBFDA29C9774500DBA9A8 /* CountryRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97DBFD929C9774500DBA9A8 /* CountryRow.swift */; };
+		B97DBFE129C9B0C900DBA9A8 /* NavigationStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97DBFE029C9B0C900DBA9A8 /* NavigationStackView.swift */; };
+		B97DBFE329C9B0F600DBA9A8 /* PlatformModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97DBFE229C9B0F600DBA9A8 /* PlatformModel.swift */; };
+		B97DBFE629C9D87C00DBA9A8 /* Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97DBFE529C9D87C00DBA9A8 /* Navigation.swift */; };
 		B9D593FA29B5E2E800DAB062 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D593F929B5E2E800DAB062 /* LoginViewModel.swift */; };
 		B9D593FF29B602ED00DAB062 /* LeafBoardTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D593FE29B602ED00DAB062 /* LeafBoardTabView.swift */; };
 		B9D6BA2C29B71A3700EE23F0 /* ProductsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D6BA2B29B71A3700EE23F0 /* ProductsView.swift */; };
@@ -77,6 +80,9 @@
 		B9608AB329C88DF200A88D56 /* CountryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryViewModel.swift; sourceTree = "<group>"; };
 		B9608AB529C88E5700A88D56 /* CountryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryModel.swift; sourceTree = "<group>"; };
 		B97DBFD929C9774500DBA9A8 /* CountryRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryRow.swift; sourceTree = "<group>"; };
+		B97DBFE029C9B0C900DBA9A8 /* NavigationStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationStackView.swift; sourceTree = "<group>"; };
+		B97DBFE229C9B0F600DBA9A8 /* PlatformModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatformModel.swift; sourceTree = "<group>"; };
+		B97DBFE529C9D87C00DBA9A8 /* Navigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigation.swift; sourceTree = "<group>"; };
 		B9D593F929B5E2E800DAB062 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		B9D593FE29B602ED00DAB062 /* LeafBoardTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeafBoardTabView.swift; sourceTree = "<group>"; };
 		B9D6BA2B29B71A3700EE23F0 /* ProductsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsView.swift; sourceTree = "<group>"; };
@@ -158,6 +164,14 @@
 			path = Demos;
 			sourceTree = "<group>";
 		};
+		B97DBFE429C9D86D00DBA9A8 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				B97DBFE529C9D87C00DBA9A8 /* Navigation.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		B9D593F829B5E2D800DAB062 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -188,6 +202,7 @@
 			children = (
 				B9D6BA3229B72CD800EE23F0 /* ProductModel.swift */,
 				B9608AB529C88E5700A88D56 /* CountryModel.swift */,
+				B97DBFE229C9B0F600DBA9A8 /* PlatformModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -217,6 +232,7 @@
 		B9F8467529AF59CD00AF72F5 /* SwiftUIDemo */ = {
 			isa = PBXGroup;
 			children = (
+				B97DBFE429C9D86D00DBA9A8 /* Utils */,
 				B95D929229B0CFEE000CAF11 /* Demos */,
 				B9F846A029AF641E00AF72F5 /* Basic Components */,
 				B9F8467629AF59CD00AF72F5 /* SwiftUIDemoApp.swift */,
@@ -261,6 +277,7 @@
 				B9608AAB29C851E300A88D56 /* LazyHGridView.swift */,
 				B9608AAD29C8527000A88D56 /* LazyVGridView.swift */,
 				B9608AAF29C86E9900A88D56 /* FirstNavigationView.swift */,
+				B97DBFE029C9B0C900DBA9A8 /* NavigationStackView.swift */,
 			);
 			path = "Basic Components";
 			sourceTree = "<group>";
@@ -522,13 +539,16 @@
 				B97DBFDA29C9774500DBA9A8 /* CountryRow.swift in Sources */,
 				B90422EC29B9B48A00DB9AD5 /* ProductsDetailView.swift in Sources */,
 				B9608AAC29C851E300A88D56 /* LazyHGridView.swift in Sources */,
+				B97DBFE329C9B0F600DBA9A8 /* PlatformModel.swift in Sources */,
 				B9F8467929AF59CD00AF72F5 /* ContentView.swift in Sources */,
 				B95D929129B07119000CAF11 /* SwiftUITextField.swift in Sources */,
+				B97DBFE629C9D87C00DBA9A8 /* Navigation.swift in Sources */,
 				B9D6BA3329B72CD800EE23F0 /* ProductModel.swift in Sources */,
 				B9F846A429AF647A00AF72F5 /* SwiftUIText.swift in Sources */,
 				B9D6BA2E29B71A4100EE23F0 /* CartView.swift in Sources */,
 				B9D6BA2C29B71A3700EE23F0 /* ProductsView.swift in Sources */,
 				B9F8467729AF59CD00AF72F5 /* SwiftUIDemoApp.swift in Sources */,
+				B97DBFE129C9B0C900DBA9A8 /* NavigationStackView.swift in Sources */,
 				B9608AB629C88E5700A88D56 /* CountryModel.swift in Sources */,
 				B9D6BA3029B71A4C00EE23F0 /* UsersView.swift in Sources */,
 				B9FC79A229B1F7C5005E2E79 /* LoginView.swift in Sources */,

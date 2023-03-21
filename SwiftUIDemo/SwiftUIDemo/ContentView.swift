@@ -8,23 +8,41 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State var navigationPath = NavigationPath()
+    
     var body: some View {
-        NavigationView {
+        NavigationStack {
             VStack {
-                NavigationLink(destination: SwiftUIText()) {
-                   TextStyle(text: "Text")
+                NavigationLink {
+                    SwiftUIText()
+                } label: {
+                    TextStyle(text: "Text")
                 }
-                NavigationLink(destination: SwiftUILabel()) {
+                NavigationLink {
+                    SwiftUILabel()
+                } label: {
                     TextStyle(text: "Label")
                 }
-                NavigationLink(destination: SwiftUITextField()) {
+                NavigationLink {
+                    SwiftUITextField()
+                } label: {
                     TextStyle(text: "TextField")
                 }
-                NavigationLink(destination: WelcomeView()) {
-                    TextStyle(text: "LoginDemo")
+                NavigationLink {
+                    WelcomeView()
+                } label: {
+                    TextStyle(text: "Login Demo")
                 }
-                NavigationLink(destination: FirstNavigationView()) {
-                    TextStyle(text: "Navigation")
+                NavigationLink {
+                    FirstNavigationView()
+                } label: {
+                    TextStyle(text: "NavigationView")
+                }
+                NavigationLink {
+                    NavigationStackView()
+                } label: {
+                    TextStyle(text: "NavigationStack")
                 }
             }
         }
@@ -41,7 +59,7 @@ struct TextStyle: View {
     var text: String
 
     var body: some View {
-        Text(text)
+        Label(text, image: "")
             .frame(width: 200)
             .padding(10)
             .foregroundColor(.white)
