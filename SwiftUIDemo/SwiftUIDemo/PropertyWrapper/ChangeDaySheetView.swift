@@ -25,7 +25,7 @@ struct ChangeDaySheetView: View {
                 presentationMode.wrappedValue.dismiss()
                 isNight = false
             } label: {
-                ButtonLabel(title: "Make Day", image: "cloud.sun.fill", color: .blue)
+                ButtonLabel(title: "Make Day", image: "cloud.sun.fill", color: .indigo)
             }
         }
     }

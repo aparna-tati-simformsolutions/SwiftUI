@@ -12,7 +12,7 @@ struct ContentView: View {
     @State var navigationPath = NavigationPath()
     
     var body: some View {
-        NavigationStack {
+        NavigationView {
             VStack {
                 NavigationLink {
                     SwiftUIText()
@@ -43,6 +43,11 @@ struct ContentView: View {
                     NavigationStackView()
                 } label: {
                     TextStyle(text: "NavigationStack")
+                }
+                NavigationLink {
+                    PropertyWrapperFirstView()
+                } label: {
+                    TextStyle(text: "Property Wrapper")
                 }
             }
         }

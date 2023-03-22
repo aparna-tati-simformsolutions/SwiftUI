@@ -26,20 +26,18 @@ struct NavigationStackView: View {
             List {
                 Section(header: Text("Platform")) {
                     ForEach(platforms, id: \.self) { platform in
-                        Label(platform.name, systemImage: platform.image)
-                            .foregroundColor(platform.color)
-//                        NavigationLink(value: platform) {
-//
-//                        }
+                        NavigationLink(value: platform) {
+                            Label(platform.name, systemImage: platform.image)
+                                .foregroundColor(platform.color)
+                        }
                     }
                 }
                 
                 Section(header: Text("Games")) {
                     ForEach(games, id: \.self) { game in
-                        Text(game.name)
-
-//                        NavigationLink(value: game) {
-//                        }
+                        NavigationLink(value: game) {
+                            Text(game.name)
+                        }
                     }
                 }
             }
