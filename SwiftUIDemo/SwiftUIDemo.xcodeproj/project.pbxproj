@@ -13,6 +13,7 @@
 		B90422EC29B9B48A00DB9AD5 /* ProductsDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B90422EB29B9B48A00DB9AD5 /* ProductsDetailView.swift */; };
 		B909325629CC196E00E3B512 /* FormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B909325529CC196E00E3B512 /* FormView.swift */; };
 		B909325829CC1AC100E3B512 /* RadioButtonField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B909325729CC1AC100E3B512 /* RadioButtonField.swift */; };
+		B909325A29CC4E9600E3B512 /* ModalWithSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B909325929CC4E9600E3B512 /* ModalWithSheetView.swift */; };
 		B94DCDBF29CB2C0400F7E1FD /* PropertyWrapperSecondView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94DCDBE29CB2C0400F7E1FD /* PropertyWrapperSecondView.swift */; };
 		B94DCDC129CB2C1600F7E1FD /* PropertyWrapperThirdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94DCDC029CB2C1600F7E1FD /* PropertyWrapperThirdView.swift */; };
 		B95D929129B07119000CAF11 /* SwiftUITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95D929029B07119000CAF11 /* SwiftUITextField.swift */; };
@@ -80,6 +81,7 @@
 		B90422EB29B9B48A00DB9AD5 /* ProductsDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsDetailView.swift; sourceTree = "<group>"; };
 		B909325529CC196E00E3B512 /* FormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormView.swift; sourceTree = "<group>"; };
 		B909325729CC1AC100E3B512 /* RadioButtonField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButtonField.swift; sourceTree = "<group>"; };
+		B909325929CC4E9600E3B512 /* ModalWithSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalWithSheetView.swift; sourceTree = "<group>"; };
 		B94DCDBE29CB2C0400F7E1FD /* PropertyWrapperSecondView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyWrapperSecondView.swift; sourceTree = "<group>"; };
 		B94DCDC029CB2C1600F7E1FD /* PropertyWrapperThirdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyWrapperThirdView.swift; sourceTree = "<group>"; };
 		B95D929029B07119000CAF11 /* SwiftUITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUITextField.swift; sourceTree = "<group>"; };
@@ -248,7 +250,6 @@
 		B9F8467529AF59CD00AF72F5 /* SwiftUIDemo */ = {
 			isa = PBXGroup;
 			children = (
-				B9AB656729CAF67C0081010B /* PropertyWrapper */,
 				B95D929229B0CFEE000CAF11 /* Demos */,
 				B9F846A029AF641E00AF72F5 /* Basic Components */,
 				B9F8467629AF59CD00AF72F5 /* SwiftUIDemoApp.swift */,
@@ -287,6 +288,7 @@
 		B9F846A029AF641E00AF72F5 /* Basic Components */ = {
 			isa = PBXGroup;
 			children = (
+				B9AB656729CAF67C0081010B /* PropertyWrapper */,
 				B9F846A329AF647A00AF72F5 /* SwiftUIText.swift */,
 				B9F846A529AF835D00AF72F5 /* SwiftUILabel.swift */,
 				B95D929029B07119000CAF11 /* SwiftUITextField.swift */,
@@ -296,6 +298,7 @@
 				B97DBFE029C9B0C900DBA9A8 /* NavigationStackView.swift */,
 				B909325529CC196E00E3B512 /* FormView.swift */,
 				B909325729CC1AC100E3B512 /* RadioButtonField.swift */,
+				B909325929CC4E9600E3B512 /* ModalWithSheetView.swift */,
 			);
 			path = "Basic Components";
 			sourceTree = "<group>";
@@ -563,6 +566,7 @@
 				B9F8467929AF59CD00AF72F5 /* ContentView.swift in Sources */,
 				B95D929129B07119000CAF11 /* SwiftUITextField.swift in Sources */,
 				B94DCDC129CB2C1600F7E1FD /* PropertyWrapperThirdView.swift in Sources */,
+				B909325A29CC4E9600E3B512 /* ModalWithSheetView.swift in Sources */,
 				B9D6BA3329B72CD800EE23F0 /* ProductModel.swift in Sources */,
 				B9F846A429AF647A00AF72F5 /* SwiftUIText.swift in Sources */,
 				B9D6BA2E29B71A4100EE23F0 /* CartView.swift in Sources */,

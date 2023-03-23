@@ -54,6 +54,11 @@ struct ContentView: View {
                 } label: {
                     TextStyle(text: "Property Wrapper")
                 }
+                NavigationLink {
+                    ModalWithSheetView()
+                } label: {
+                    TextStyle(text: "Modal Sheet")
+                }
             }
         }
     }
