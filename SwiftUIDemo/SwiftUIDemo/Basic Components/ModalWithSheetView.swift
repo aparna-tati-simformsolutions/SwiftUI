@@ -20,30 +20,50 @@ struct ModalWithSheetView: View {
     
     @State private var activeSheet: Sheet?
     @State private var viewName = ""
+    @State private var showingOptions = false
+    @State private var selection = "None"
     
     var body: some View {
-        VStack(spacing: 20) {
-            Text("Your Main View has presented \(viewName)")
-            Text("Main View")
-                .font(.largeTitle)
-                .bold()
-            
-            Button {
-                activeSheet = .info
-            } label: {
-                Label("Information View", systemImage: "info.circle")
+        Form {
+            Section(header: Text("Modal")) {
+                Text("Your Main View has presented \(viewName)")
+                Text("Main View")
+                    .font(.largeTitle)
+                    .bold()
+                
+                Button {
+                    activeSheet = .info
+                } label: {
+                    Label("Information View", systemImage: "info.circle")
+                }
+                
+                Button {
+                    activeSheet = .setting
+                } label: {
+                    Label("Setting", systemImage: "gear")
+                }
             }
             
-            Button {
-                activeSheet = .setting
-            } label: {
-                Label("Setting", systemImage: "gear")
+            Section(header: Text("Action Sheet")) {
+                Text(selection)
+                Button("Image Picker") {
+                    showingOptions = true
+                }
+                .confirmationDialog("Choose Photo", isPresented: $showingOptions) {
+                    Button("Open Camera") {
+                        selection = "Open Camera"
+                    }
+                    
+                    Button("Open Gallery") {
+                        selection = "Open Gallery"
+                    }
+                }
             }
         }
         .sheet(item: $activeSheet) { sheet in
             switch sheet {
             case .info:
-                InformationView(information: $viewName)
+                InformationView(data: "Hello", information: $viewName)
             case .setting:
                 SettingsView(setting: $viewName)
             }
