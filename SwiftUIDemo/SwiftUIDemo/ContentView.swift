@@ -45,6 +45,11 @@ struct ContentView: View {
                     TextStyle(text: "NavigationStack")
                 }
                 NavigationLink {
+                    FormView()
+                } label: {
+                    TextStyle(text: "Form View")
+                }
+                NavigationLink {
                     PropertyWrapperFirstView()
                 } label: {
                     TextStyle(text: "Property Wrapper")

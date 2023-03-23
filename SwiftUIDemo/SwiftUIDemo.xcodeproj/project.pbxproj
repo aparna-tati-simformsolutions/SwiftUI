@@ -11,6 +11,8 @@
 		49ED05FC75B7416693467060 /* Pods_SwiftUIDemo_SwiftUIDemoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24389F7C1AF636369C35B8D7 /* Pods_SwiftUIDemo_SwiftUIDemoUITests.framework */; };
 		B90422EA29B9B2FC00DB9AD5 /* ProductRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B90422E929B9B2FC00DB9AD5 /* ProductRow.swift */; };
 		B90422EC29B9B48A00DB9AD5 /* ProductsDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B90422EB29B9B48A00DB9AD5 /* ProductsDetailView.swift */; };
+		B909325629CC196E00E3B512 /* FormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B909325529CC196E00E3B512 /* FormView.swift */; };
+		B909325829CC1AC100E3B512 /* RadioButtonField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B909325729CC1AC100E3B512 /* RadioButtonField.swift */; };
 		B94DCDBF29CB2C0400F7E1FD /* PropertyWrapperSecondView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94DCDBE29CB2C0400F7E1FD /* PropertyWrapperSecondView.swift */; };
 		B94DCDC129CB2C1600F7E1FD /* PropertyWrapperThirdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94DCDC029CB2C1600F7E1FD /* PropertyWrapperThirdView.swift */; };
 		B95D929129B07119000CAF11 /* SwiftUITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95D929029B07119000CAF11 /* SwiftUITextField.swift */; };
@@ -76,6 +78,8 @@
 		AB7E7CDC8ECB8BB0EEFBE798 /* Pods_SwiftUIDemoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftUIDemoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B90422E929B9B2FC00DB9AD5 /* ProductRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductRow.swift; sourceTree = "<group>"; };
 		B90422EB29B9B48A00DB9AD5 /* ProductsDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsDetailView.swift; sourceTree = "<group>"; };
+		B909325529CC196E00E3B512 /* FormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormView.swift; sourceTree = "<group>"; };
+		B909325729CC1AC100E3B512 /* RadioButtonField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButtonField.swift; sourceTree = "<group>"; };
 		B94DCDBE29CB2C0400F7E1FD /* PropertyWrapperSecondView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyWrapperSecondView.swift; sourceTree = "<group>"; };
 		B94DCDC029CB2C1600F7E1FD /* PropertyWrapperThirdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyWrapperThirdView.swift; sourceTree = "<group>"; };
 		B95D929029B07119000CAF11 /* SwiftUITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUITextField.swift; sourceTree = "<group>"; };
@@ -290,6 +294,8 @@
 				B9608AAD29C8527000A88D56 /* LazyVGridView.swift */,
 				B9608AAF29C86E9900A88D56 /* FirstNavigationView.swift */,
 				B97DBFE029C9B0C900DBA9A8 /* NavigationStackView.swift */,
+				B909325529CC196E00E3B512 /* FormView.swift */,
+				B909325729CC1AC100E3B512 /* RadioButtonField.swift */,
 			);
 			path = "Basic Components";
 			sourceTree = "<group>";
@@ -545,11 +551,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B909325829CC1AC100E3B512 /* RadioButtonField.swift in Sources */,
 				B9D593FF29B602ED00DAB062 /* LeafBoardTabView.swift in Sources */,
 				B9F846A629AF835D00AF72F5 /* SwiftUILabel.swift in Sources */,
 				B95D929429B0D008000CAF11 /* WelcomeView.swift in Sources */,
 				B97DBFDA29C9774500DBA9A8 /* CountryRow.swift in Sources */,
 				B90422EC29B9B48A00DB9AD5 /* ProductsDetailView.swift in Sources */,
+				B909325629CC196E00E3B512 /* FormView.swift in Sources */,
 				B9608AAC29C851E300A88D56 /* LazyHGridView.swift in Sources */,
 				B97DBFE329C9B0F600DBA9A8 /* PlatformModel.swift in Sources */,
 				B9F8467929AF59CD00AF72F5 /* ContentView.swift in Sources */,
