@@ -16,32 +16,30 @@ struct FormView: View {
     @State private var noOfArticles = 0
     
     var body: some View {
-        NavigationView {
-            Form {
-                Section(header: Text("Personal Information")) {
-                    TextField("First Name", text: $firstName)
-                    TextField("Last Name", text: $lastName)
-                    DatePicker("Date of Birth", selection: $dob, displayedComponents: .date)
-                        .frame(height: 25)
-                    HStack(spacing: 50) {
-                        Text("Gender")
-                        RadioButtonGroups { selected in
-                            print("SELECTED \(selected)")
-                        }
+        Form {
+            Section(header: Text("Personal Information")) {
+                TextField("First Name", text: $firstName)
+                TextField("Last Name", text: $lastName)
+                DatePicker("Date of Birth", selection: $dob, displayedComponents: .date)
+                    .frame(height: 25)
+                HStack(spacing: 50) {
+                    Text("Gender")
+                    RadioButtonGroups { selected in
+                        print("SELECTED \(selected)")
                     }
-                }
-                Section(header: Text("Actions")) {
-                    Toggle("Dark Mode", isOn: $isDarkMode)
-                    VStack(alignment: .leading) {
-                        Stepper("Published Articles", value: $noOfArticles)
-                        Text("You have published \(noOfArticles) Articles")
-                    }
-                    RangeSlider()
                 }
             }
-            .accentColor(.red)
-            .navigationTitle("Account")
+            Section(header: Text("Actions")) {
+                Toggle("Dark Mode", isOn: $isDarkMode)
+                VStack(alignment: .leading) {
+                    Stepper("Published Articles", value: $noOfArticles)
+                    Text("You have published \(noOfArticles) Articles")
+                }
+                RangeSlider()
+            }
         }
+        .accentColor(.red)
+        .navigationTitle("Account")
     }
 }
 

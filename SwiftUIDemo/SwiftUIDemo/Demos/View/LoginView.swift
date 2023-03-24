@@ -35,22 +35,20 @@ extension LoginView {
      }
 
     private var loginView: some View {
-        NavigationView {
-            VStack {
-                NavigationLink(destination: LeafBoardTabView(), isActive: $goToTabView) {
-                    EmptyView()
-                }
-                Spacer()
-                    .frame(height: UIScreen.main.bounds.height * 0.05)
-                headings
-                Spacer()
-                    .frame(height: UIScreen.main.bounds.height * 0.05)
-                textFields
-                loginButton
-                divider
-                socialLoginButtons
-                Spacer()
+        VStack {
+            NavigationLink(destination: LeafBoardTabView(), isActive: $goToTabView) {
+                EmptyView()
             }
+            Spacer()
+                .frame(height: UIScreen.main.bounds.height * 0.05)
+            headings
+            Spacer()
+                .frame(height: UIScreen.main.bounds.height * 0.05)
+            textFields
+            loginButton
+            divider
+            socialLoginButtons
+            Spacer()
         }
         .onSubmit {
             if focusedField == .email {

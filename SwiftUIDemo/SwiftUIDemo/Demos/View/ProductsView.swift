@@ -18,15 +18,13 @@ struct ProductsView: View {
     var body: some View {
         VStack {
             ZStack {
-                NavigationView {
-                    List(productViewModel.productData, id: \.self) {
-                        product in
-                        NavigationLink(destination: ProductsDetailView(productId:product.id)) {
-                            ProductRow(product: product)
-                        }
+                List(productViewModel.productData, id: \.self) {
+                    product in
+                    NavigationLink(destination: ProductsDetailView(productId:product.id)) {
+                        ProductRow(product: product)
                     }
-                    .listStyle(.plain)
                 }
+                .listStyle(.plain)
                 if !productViewModel.isDataFetch {
                     ProgressView {
                         Text("Loading")

@@ -24,17 +24,15 @@ struct WelcomeView_PreviewsT: PreviewProvider {
 
 extension WelcomeView {
     private var welcomeViewDesign: some View {
-        NavigationView {
-            VStack {
-                NavigationLink(destination: LoginView(), isActive: $goToLoginView) {
-                    EmptyView()
-                }
-                headerDesign
-                titlesDesign
-                buttonDesign
+        VStack {
+            NavigationLink(destination: LoginView(), isActive: $goToLoginView) {
+                EmptyView()
             }
-            .background(Color.white)
+            headerDesign
+            titlesDesign
+            buttonDesign
         }
+        .background(Color.white)
     }
     
     private var headerDesign: some View {

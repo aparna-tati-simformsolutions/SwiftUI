@@ -59,6 +59,11 @@ struct ContentView: View {
                 } label: {
                     TextStyle(text: "Modal Sheet")
                 }
+                NavigationLink {
+                    HomeView()
+                } label: {
+                    TextStyle(text: "Swipe Effect View")
+                }
             }
         }
     }
