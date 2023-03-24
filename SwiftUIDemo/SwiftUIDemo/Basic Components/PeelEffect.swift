@@ -20,17 +20,40 @@ struct PeelEffect<Content: View>: View {
     
     var body: some View {
         content
-            .mask {
+            .hidden()
+            .overlay(content: {
                 GeometryReader {
                     let rect = $0.frame(in: .global)
-                    Rectangle()
-                        .padding(.trailing, dragProgress * rect.width)
+                    RoundedRectangle(cornerRadius: 15, style: .continuous)
+                        .fill(.red.gradient)
+                        .overlay(alignment: .trailing) {
+                            Button {
+                                print("Tapped")
+                            } label: {
+                                Image(systemName: "trash")
+                                    .font(.title)
+                                    .fontWeight(.bold)
+                                    .padding(.trailing, 15)
+                                    .foregroundColor(.white)
+                                    .contentShape(Rectangle())
+                            }
+
+                        }
+                        .padding(.vertical, 8)
+                        content
+                        .mask {
+                            Rectangle()
+                                .padding(.trailing, dragProgress * rect.width)
+                        }
                 }
-            }
+            })
             .overlay {
                 GeometryReader {
                     let rect = $0.frame(in: .global)
                     let size = $0.size
+                    let minOpacity = dragProgress / 0.5
+                    let opacity = min(1, minOpacity)
+                    
                     let dragGesture = DragGesture()
                         .onChanged { value in
                             let transitionX = max(-value.translation.width, 0)
@@ -38,7 +61,11 @@ struct PeelEffect<Content: View>: View {
                         }
                         .onEnded { value in
                             withAnimation(.spring(response: 0.6, dampingFraction: 0.7, blendDuration: 0.7)) {
-                                dragProgress = .zero
+                                if dragProgress > 0.25 {
+                                    dragProgress = 0.6
+                                } else {
+                                    dragProgress = .zero
+                                }
                             }
                         }
                     content
@@ -48,6 +75,21 @@ struct PeelEffect<Content: View>: View {
                                 .fill(.white.opacity(0.25))
                                 .mask(content)
                         })
+                        .overlay(alignment: .trailing) {
+                            Rectangle()
+                                .fill(
+                                    .linearGradient(colors: [
+                                        .clear,
+                                        .white,
+                                        .clear,
+                                        .clear
+                                    ], startPoint: .leading, endPoint: .trailing)
+                                )
+                                .frame(width: 60)
+                                .offset(x: 40)
+                                .offset(x: -30 + (30 * opacity))
+                                .offset(x: size.width * -dragProgress)
+                        }
                         .scaleEffect(x: -1)
                         .offset(x: size.width - (size.width * dragProgress))
                         .offset(x: size.width * -dragProgress)
@@ -61,16 +103,16 @@ struct PeelEffect<Content: View>: View {
                 }
             }
             .background {
-                RoundedRectangle(cornerRadius: 15, style: .continuous)
-                    .fill(.red.gradient)
-                    .overlay(alignment: .trailing) {
-                        Image(systemName: "trash")
-                            .font(.title)
-                            .fontWeight(.bold)
-                            .padding(.trailing, 15)
-                            .foregroundColor(.white)
-                    }
-                    .padding(.vertical, 8)
+                GeometryReader {
+                    let rect = $0.frame(in: .global)
+                    
+                    Rectangle()
+                        .fill(.black)
+                        .padding(.trailing, 20)
+                        .shadow(color: .black.opacity(0.3), radius: 15, x: 30, y: 0)
+                        .padding(.trailing, rect.width * dragProgress)
+                }
+                .mask(content)
             }
     }
 }
