@@ -13,7 +13,7 @@ struct ContentView: View {
     
     var body: some View {
         NavigationView {
-            VStack {
+            LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], content: {
                 NavigationLink {
                     SwiftUIText()
                 } label: {
@@ -60,11 +60,11 @@ struct ContentView: View {
                     TextStyle(text: "Modal Sheet")
                 }
                 NavigationLink {
-                    HomeView()
+                    SearchView()
                 } label: {
-                    TextStyle(text: "Swipe Effect View")
+                    TextStyle(text: "SearchView")
                 }
-            }
+            })
         }
     }
 }
@@ -80,8 +80,8 @@ struct TextStyle: View {
 
     var body: some View {
         Label(text, image: "")
-            .frame(width: 200)
-            .padding(10)
+            .frame(width: 170, height: 60)
+            .padding(5)
             .foregroundColor(.white)
             .background(LinearGradient(gradient: Gradient(colors: [Color.red, Color.blue]), startPoint: .trailing, endPoint: .leading))
             .cornerRadius(40)
