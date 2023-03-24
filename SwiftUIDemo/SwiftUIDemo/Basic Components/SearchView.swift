@@ -11,6 +11,7 @@ struct SearchView: View {
 
     @State private var searchedText = ""
     @State private var placeHolder = "Search"
+    @State private var isPopupPresenetd = false
     
     var fruits = ["🍎 Apple", "🍌 Banana", "🍋 Mango", "🍇 Graps", "🍉 Watermelon", "🍒 Cherry", "🍓 Strawberry"]
     
@@ -35,12 +36,13 @@ struct SearchView: View {
         .toolbar {
             ToolbarItem {
                 Button {
-                    
+                    isPopupPresenetd = true
                 } label: {
-                    Label("Add", systemImage: "plus.app.fill")
+                    Label("Add", systemImage: "plus.app")
                 }
             }
         }
+       
     }
 }
 
